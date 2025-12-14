@@ -4,8 +4,14 @@ html {
     font-family: "Caveat Brush", cursive;
     background-color: aquamarine;
     color: salmon;
+    font-size: 30px; /* base size */
 }
 
 .homeLinks{
     size:100px;
+}
+
+.homeLogo{
+    width:150px;
+    height:150px;
 }

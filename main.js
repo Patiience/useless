@@ -3,8 +3,8 @@ const path = require("path");
 const app = express(); 
 const portNumber = 3000;
 
-//const browse = require("./routes/browse");
-//const fact = require("./routes/fact");
+const browse = require("./routes/browse");
+const fact = require("./routes/fact");
 
 /* Defining the view/templating engine to use */
 app.set("view engine", "ejs");
