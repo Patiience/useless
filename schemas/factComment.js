@@ -4,4 +4,4 @@ const factCommentSchema = new mongoose.Schema({
     comments: String
 })
 
-module.exports = mongoose.model('FactComment', factCommentsSchema);
+module.exports = mongoose.model('FactComment', factCommentSchema);
