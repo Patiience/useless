@@ -1,6 +1,7 @@
 const express = require("express"); 
 const path = require("path");
 const app = express(); 
+const bodyParser = require("body-parser");
 const portNumber = 3000;
 
 const browse = require("./routes/browse");
@@ -11,6 +12,8 @@ app.set("view engine", "ejs");
 
 /* Directory where templates will reside */
 app.set("views", path.resolve(__dirname, "templates"));
+
+app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(express.static(__dirname));
 

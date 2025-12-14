@@ -10,4 +10,4 @@
 
 **Contact Email**:  superterp@notreal.address.what
 
-**Deployed App Link**: https://notreal.what.terpNel/myApp
+**Deployed App Link**: https://useless-q2zo.onrender.com/

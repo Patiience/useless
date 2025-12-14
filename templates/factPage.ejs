@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/useless.css">
     <link rel="icon" href="/uselessFactsFav.png">
-    <title>Main Page</title>
+    <title>Fact Page</title>
 </head>
 <body>
     <a href="/">
@@ -14,5 +14,27 @@
 
     <h1>Here's your useless fact...</h1>
 
+    <form action="/fact/submit" method="post">
+        <div id="fact"><%= uselessFact %></div>
+
+        <button type="button" onclick="getRandomFact()">Generate Random Fact</button>
+
+        <br><br>
+
+        <input type="hidden" name="fact" id="submitFact" value="<%= uselessFact %>">
+        Comment:<br>
+        <textarea rows="5" cols="80" name="comment"></textarea>
+		<br>
+		<input type="submit" value="Submit Comment"/>
+    </form>
+
+    <script>
+        async function getRandomFact() {
+            let response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random");
+            let randomJSON = await response.json();
+            document.querySelector("#fact").innerHTML = randomJSON["text"];
+            document.querySelector("#submitFact").value = randomJSON["text"];
+        }
+    </script>
 </body>
 </html>
