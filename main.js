@@ -14,14 +14,9 @@ app.set("views", path.resolve(__dirname, "templates"));
 
 app.use(express.static(__dirname));
 
-/* Treating building.js like middleware. Use buildings.js 
-   file to handle endpoints that start with /buildings */
-//app.use("/browse", browse);
+app.use("/browse", browse);
 
-/* Treating schoolDorms.js like middleware. Use schoolDorms.js 
-   file to handle endpoints that start with /dorms.  Examples shows you
-   don't have to name file after part of the endpoint */
-//app.use("/fact", fact);
+app.use("/fact", fact);
 
 /* This one cannot be first */
 app.use("/", (request, response) => {
